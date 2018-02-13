@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TibcoGPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Compte_rendu">
+          <Key>
+            <PropertyRef Name="cr_id" />
+          </Key>
+          <Property Name="cr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cr_ph_id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="cr_datedeb" Type="smalldatetime" />
+          <Property Name="cr_datefin" Type="smalldatetime" />
+          <Property Name="cr_client" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_presta" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_infolocalisation" Type="nvarchar" MaxLength="150" />
+          <Property Name="cr_adresse" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_cp" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_ville" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_description" Type="nvarchar" MaxLength="500" />
+          <Property Name="cr_gpsX" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_gpsY" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_etat" Type="smallint" />
+          <Property Name="cr_GTI" Type="smalldatetime" />
+          <Property Name="cr_gtr" Type="smalldatetime" />
+          <Property Name="cr_rapport" Type="xml" />
+          <Property Name="cr_rapport_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_user" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_date_synchro" Type="smalldatetime" />
+          <Property Name="cr_date_PEC" Type="smalldatetime" />
+          <Property Name="cr_date_Arrivée" Type="smalldatetime" />
+          <Property Name="cr_date_gel" Type="smalldatetime" />
+          <Property Name="cr_date_terminé" Type="smalldatetime" />
+          <Property Name="cr_codeSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_listeIDGEDECO" Type="nvarchar" MaxLength="500" />
+          <Property Name="cr_DateModif" Type="smalldatetime" />
+          <Property Name="cr_withRDV" Type="bit" />
+          <Property Name="cr_owner" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_site" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_oldValue" Type="nvarchar" MaxLength="200" />
+          <Property Name="cr_accompagnant" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_alerte" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_tempsMethode" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'TibcoGP.dbo.V_Compte_Rendu' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="V_Compte_Rendu">
+          <Key>
+            <PropertyRef Name="cr_id" />
+          </Key>
+          <Property Name="cr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cr_ph_id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="cr_datedeb" Type="smalldatetime" />
+          <Property Name="cr_datefin" Type="smalldatetime" />
+          <Property Name="cr_client" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_infolocalisation" Type="nvarchar" MaxLength="150" />
+          <Property Name="cr_presta" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_adresse" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_cp" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_ville" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_gpsX" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_description" Type="nvarchar" MaxLength="500" />
+          <Property Name="cr_gpsY" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_etat" Type="smallint" />
+          <Property Name="cr_GTI" Type="smalldatetime" />
+          <Property Name="cr_gtr" Type="smalldatetime" />
+          <Property Name="cr_rapport_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_user" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_date_synchro" Type="smalldatetime" />
+          <Property Name="cr_date_PEC" Type="smalldatetime" />
+          <Property Name="cr_date_Arrivée" Type="smalldatetime" />
+          <Property Name="cr_date_terminé" Type="smalldatetime" />
+          <Property Name="cr_date_gel" Type="smalldatetime" />
+          <Property Name="cr_codeSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_listeIDGEDECO" Type="nvarchar" MaxLength="500" />
+          <Property Name="cr_DateModif" Type="smalldatetime" />
+          <Property Name="cr_withRDV" Type="bit" />
+          <Property Name="cr_site" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_owner" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_oldValue" Type="nvarchar" MaxLength="200" />
+          <Property Name="cr_accompagnant" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_alerte" Type="nvarchar" MaxLength="50" />
+          <Property Name="cr_tempsMethode" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="TibcoGPModelStoreContainer">
+          <EntitySet Name="Compte_rendu" EntityType="Self.Compte_rendu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_Compte_Rendu" EntityType="Self.V_Compte_Rendu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Compte_Rendu].[cr_id] AS [cr_id], 
+    [V_Compte_Rendu].[cr_ph_id] AS [cr_ph_id], 
+    [V_Compte_Rendu].[cr_datedeb] AS [cr_datedeb], 
+    [V_Compte_Rendu].[cr_datefin] AS [cr_datefin], 
+    [V_Compte_Rendu].[cr_client] AS [cr_client], 
+    [V_Compte_Rendu].[cr_infolocalisation] AS [cr_infolocalisation], 
+    [V_Compte_Rendu].[cr_presta] AS [cr_presta], 
+    [V_Compte_Rendu].[cr_adresse] AS [cr_adresse], 
+    [V_Compte_Rendu].[cr_cp] AS [cr_cp], 
+    [V_Compte_Rendu].[cr_ville] AS [cr_ville], 
+    [V_Compte_Rendu].[cr_gpsX] AS [cr_gpsX], 
+    [V_Compte_Rendu].[cr_description] AS [cr_description], 
+    [V_Compte_Rendu].[cr_gpsY] AS [cr_gpsY], 
+    [V_Compte_Rendu].[cr_etat] AS [cr_etat], 
+    [V_Compte_Rendu].[cr_GTI] AS [cr_GTI], 
+    [V_Compte_Rendu].[cr_gtr] AS [cr_gtr], 
+    [V_Compte_Rendu].[cr_rapport_type] AS [cr_rapport_type], 
+    [V_Compte_Rendu].[cr_user] AS [cr_user], 
+    [V_Compte_Rendu].[cr_date_synchro] AS [cr_date_synchro], 
+    [V_Compte_Rendu].[cr_date_PEC] AS [cr_date_PEC], 
+    [V_Compte_Rendu].[cr_date_Arrivée] AS [cr_date_Arrivée], 
+    [V_Compte_Rendu].[cr_date_terminé] AS [cr_date_terminé], 
+    [V_Compte_Rendu].[cr_date_gel] AS [cr_date_gel], 
+    [V_Compte_Rendu].[cr_codeSite] AS [cr_codeSite], 
+    [V_Compte_Rendu].[cr_listeIDGEDECO] AS [cr_listeIDGEDECO], 
+    [V_Compte_Rendu].[cr_DateModif] AS [cr_DateModif], 
+    [V_Compte_Rendu].[cr_withRDV] AS [cr_withRDV], 
+    [V_Compte_Rendu].[cr_site] AS [cr_site], 
+    [V_Compte_Rendu].[cr_owner] AS [cr_owner], 
+    [V_Compte_Rendu].[cr_oldValue] AS [cr_oldValue], 
+    [V_Compte_Rendu].[cr_accompagnant] AS [cr_accompagnant], 
+    [V_Compte_Rendu].[cr_alerte] AS [cr_alerte], 
+    [V_Compte_Rendu].[cr_tempsMethode] AS [cr_tempsMethode]
+    FROM [dbo].[V_Compte_Rendu] AS [V_Compte_Rendu]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TibcoGPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Compte_rendu">
+          <Key>
+            <PropertyRef Name="cr_id" />
+          </Key>
+          <Property Name="cr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cr_ph_id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="cr_datedeb" Type="DateTime" Precision="0" />
+          <Property Name="cr_datefin" Type="DateTime" Precision="0" />
+          <Property Name="cr_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_presta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_infolocalisation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="cr_adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_cp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_ville" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cr_gpsX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_gpsY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_etat" Type="Int16" />
+          <Property Name="cr_GTI" Type="DateTime" Precision="0" />
+          <Property Name="cr_gtr" Type="DateTime" Precision="0" />
+          <Property Name="cr_rapport" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cr_rapport_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_date_synchro" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_PEC" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_Arrivée" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_gel" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_terminé" Type="DateTime" Precision="0" />
+          <Property Name="cr_codeSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_listeIDGEDECO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cr_DateModif" Type="DateTime" Precision="0" />
+          <Property Name="cr_withRDV" Type="Boolean" />
+          <Property Name="cr_owner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_site" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_oldValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="cr_accompagnant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_alerte" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_tempsMethode" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="TibcoGPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compte_rendu" EntityType="Self.Compte_rendu" />
+          <EntitySet Name="V_Compte_Rendu" EntityType="TibcoGPModel.V_Compte_Rendu" />
+        </EntityContainer>
+        <EntityType Name="V_Compte_Rendu">
+          <Key>
+            <PropertyRef Name="cr_id" />
+          </Key>
+          <Property Name="cr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cr_ph_id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="cr_datedeb" Type="DateTime" Precision="0" />
+          <Property Name="cr_datefin" Type="DateTime" Precision="0" />
+          <Property Name="cr_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_infolocalisation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="cr_presta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_cp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_ville" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_gpsX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cr_gpsY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_etat" Type="Int16" />
+          <Property Name="cr_GTI" Type="DateTime" Precision="0" />
+          <Property Name="cr_gtr" Type="DateTime" Precision="0" />
+          <Property Name="cr_rapport_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_date_synchro" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_PEC" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_Arrivée" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_terminé" Type="DateTime" Precision="0" />
+          <Property Name="cr_date_gel" Type="DateTime" Precision="0" />
+          <Property Name="cr_codeSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_listeIDGEDECO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cr_DateModif" Type="DateTime" Precision="0" />
+          <Property Name="cr_withRDV" Type="Boolean" />
+          <Property Name="cr_site" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_owner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_oldValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="cr_accompagnant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_alerte" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cr_tempsMethode" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TibcoGPModelStoreContainer" CdmEntityContainer="TibcoGPEntities">
+          <EntitySetMapping Name="Compte_rendu">
+            <EntityTypeMapping TypeName="TibcoGPModel.Compte_rendu">
+              <MappingFragment StoreEntitySet="Compte_rendu">
+                <ScalarProperty Name="cr_id" ColumnName="cr_id" />
+                <ScalarProperty Name="cr_ph_id" ColumnName="cr_ph_id" />
+                <ScalarProperty Name="cr_datedeb" ColumnName="cr_datedeb" />
+                <ScalarProperty Name="cr_datefin" ColumnName="cr_datefin" />
+                <ScalarProperty Name="cr_client" ColumnName="cr_client" />
+                <ScalarProperty Name="cr_presta" ColumnName="cr_presta" />
+                <ScalarProperty Name="cr_infolocalisation" ColumnName="cr_infolocalisation" />
+                <ScalarProperty Name="cr_adresse" ColumnName="cr_adresse" />
+                <ScalarProperty Name="cr_cp" ColumnName="cr_cp" />
+                <ScalarProperty Name="cr_ville" ColumnName="cr_ville" />
+                <ScalarProperty Name="cr_description" ColumnName="cr_description" />
+                <ScalarProperty Name="cr_gpsX" ColumnName="cr_gpsX" />
+                <ScalarProperty Name="cr_gpsY" ColumnName="cr_gpsY" />
+                <ScalarProperty Name="cr_etat" ColumnName="cr_etat" />
+                <ScalarProperty Name="cr_GTI" ColumnName="cr_GTI" />
+                <ScalarProperty Name="cr_gtr" ColumnName="cr_gtr" />
+                <ScalarProperty Name="cr_rapport" ColumnName="cr_rapport" />
+                <ScalarProperty Name="cr_rapport_type" ColumnName="cr_rapport_type" />
+                <ScalarProperty Name="cr_user" ColumnName="cr_user" />
+                <ScalarProperty Name="cr_date_synchro" ColumnName="cr_date_synchro" />
+                <ScalarProperty Name="cr_date_PEC" ColumnName="cr_date_PEC" />
+                <ScalarProperty Name="cr_date_Arrivée" ColumnName="cr_date_Arrivée" />
+                <ScalarProperty Name="cr_date_gel" ColumnName="cr_date_gel" />
+                <ScalarProperty Name="cr_date_terminé" ColumnName="cr_date_terminé" />
+                <ScalarProperty Name="cr_codeSite" ColumnName="cr_codeSite" />
+                <ScalarProperty Name="cr_listeIDGEDECO" ColumnName="cr_listeIDGEDECO" />
+                <ScalarProperty Name="cr_DateModif" ColumnName="cr_DateModif" />
+                <ScalarProperty Name="cr_withRDV" ColumnName="cr_withRDV" />
+                <ScalarProperty Name="cr_owner" ColumnName="cr_owner" />
+                <ScalarProperty Name="cr_site" ColumnName="cr_site" />
+                <ScalarProperty Name="cr_oldValue" ColumnName="cr_oldValue" />
+                <ScalarProperty Name="cr_accompagnant" ColumnName="cr_accompagnant" />
+                <ScalarProperty Name="cr_alerte" ColumnName="cr_alerte" />
+                <ScalarProperty Name="cr_tempsMethode" ColumnName="cr_tempsMethode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Compte_Rendu">
+            <EntityTypeMapping TypeName="TibcoGPModel.V_Compte_Rendu">
+              <MappingFragment StoreEntitySet="V_Compte_Rendu">
+                <ScalarProperty Name="cr_tempsMethode" ColumnName="cr_tempsMethode" />
+                <ScalarProperty Name="cr_alerte" ColumnName="cr_alerte" />
+                <ScalarProperty Name="cr_accompagnant" ColumnName="cr_accompagnant" />
+                <ScalarProperty Name="cr_oldValue" ColumnName="cr_oldValue" />
+                <ScalarProperty Name="cr_owner" ColumnName="cr_owner" />
+                <ScalarProperty Name="cr_site" ColumnName="cr_site" />
+                <ScalarProperty Name="cr_withRDV" ColumnName="cr_withRDV" />
+                <ScalarProperty Name="cr_DateModif" ColumnName="cr_DateModif" />
+                <ScalarProperty Name="cr_listeIDGEDECO" ColumnName="cr_listeIDGEDECO" />
+                <ScalarProperty Name="cr_codeSite" ColumnName="cr_codeSite" />
+                <ScalarProperty Name="cr_date_gel" ColumnName="cr_date_gel" />
+                <ScalarProperty Name="cr_date_terminé" ColumnName="cr_date_terminé" />
+                <ScalarProperty Name="cr_date_Arrivée" ColumnName="cr_date_Arrivée" />
+                <ScalarProperty Name="cr_date_PEC" ColumnName="cr_date_PEC" />
+                <ScalarProperty Name="cr_date_synchro" ColumnName="cr_date_synchro" />
+                <ScalarProperty Name="cr_user" ColumnName="cr_user" />
+                <ScalarProperty Name="cr_rapport_type" ColumnName="cr_rapport_type" />
+                <ScalarProperty Name="cr_gtr" ColumnName="cr_gtr" />
+                <ScalarProperty Name="cr_GTI" ColumnName="cr_GTI" />
+                <ScalarProperty Name="cr_etat" ColumnName="cr_etat" />
+                <ScalarProperty Name="cr_gpsY" ColumnName="cr_gpsY" />
+                <ScalarProperty Name="cr_description" ColumnName="cr_description" />
+                <ScalarProperty Name="cr_gpsX" ColumnName="cr_gpsX" />
+                <ScalarProperty Name="cr_ville" ColumnName="cr_ville" />
+                <ScalarProperty Name="cr_cp" ColumnName="cr_cp" />
+                <ScalarProperty Name="cr_adresse" ColumnName="cr_adresse" />
+                <ScalarProperty Name="cr_presta" ColumnName="cr_presta" />
+                <ScalarProperty Name="cr_infolocalisation" ColumnName="cr_infolocalisation" />
+                <ScalarProperty Name="cr_client" ColumnName="cr_client" />
+                <ScalarProperty Name="cr_datefin" ColumnName="cr_datefin" />
+                <ScalarProperty Name="cr_datedeb" ColumnName="cr_datedeb" />
+                <ScalarProperty Name="cr_ph_id" ColumnName="cr_ph_id" />
+                <ScalarProperty Name="cr_id" ColumnName="cr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
